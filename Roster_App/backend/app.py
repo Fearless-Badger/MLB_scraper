@@ -26,7 +26,7 @@ def disp_roster(team):
                     team_roster.append(found_player.string)
             return f"<h1>{team_roster}</h1>"
         else:
-            return "<h1>Site Not Found</h1?"
+            return "<h1>Site Not Found</h1>"
     except Exception as e:
         error = f"<h1>Error accessing site : {e}</h1>"
         return error
