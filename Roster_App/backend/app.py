@@ -19,7 +19,11 @@ def disp_roster(team):
             soup = BeautifulSoup(response.content, 'html.parser')
             fourty_man_roster = soup.find('div', 'players').find_all('table', 'roster__table')
 
-            pitchers, catchers, infielders, outfielders = fourty_man_roster # unpack tables into positions
+            # unpack tables into positions
+            pitchers = fourty_man_roster[0]
+            catchers = fourty_man_roster[1]
+            infielders = fourty_man_roster[2]
+            outfielders = fourty_man_roster[3]
 
             result = {} # str(position) : [ str(player_names) ]
 
@@ -31,7 +35,7 @@ def disp_roster(team):
 
             return f"<h1>{result}</h1>"
         else:
-            return "<h1>Site Not Found</h1>"
+            return "<h1>Site Not Found</h1>" # invalid path
     except Exception as e:
         #    raise Exception(e) # lol
         return f"<h1>Error accessing site : {e}</h1>"
