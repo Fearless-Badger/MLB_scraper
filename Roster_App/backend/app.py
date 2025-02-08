@@ -18,15 +18,31 @@ def disp_roster(team):
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
             fourty_man_roster = soup.find('div', 'players').find_all('table', 'roster__table')
-            team_roster = []
-            for roster in fourty_man_roster:
-                players = roster.find('tbody').find_all('tr')
-                for player in players:
-                    found_player = player.find('td', 'info').find('a')
-                    team_roster.append(found_player.string)
-            return f"<h1>{team_roster}</h1>"
+
+            pitchers, catchers, infielders, outfielders = fourty_man_roster # unpack tables into positions
+
+            result = {} # str(position) : [ str(player_names) ]
+
+            # add player names to their respective list in result dict
+            process_table(pitchers, result, "Pitchers")
+            process_table(catchers, result, "Catchers")
+            process_table(infielders, result, "Infielders")
+            process_table(outfielders, result, "Outfielders")
+
+            return f"<h1>{result}</h1>"
         else:
             return "<h1>Site Not Found</h1>"
     except Exception as e:
-        error = f"<h1>Error accessing site : {e}</h1>"
-        return error
+        #    raise Exception(e) # lol
+        return f"<h1>Error accessing site : {e}</h1>"
+    
+def process_table(table, res, position):
+
+    res[position] = [] # create entry in dict
+
+    if table:
+        tbody = table.find('tbody').find_all('tr') # table -> tbody -> tr
+        if tbody:
+            for player in tbody:
+                found_player = player.find('td', 'info').find('a') # td -> info -> a 
+                res[position].append(found_player.string) # append name to list
