@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 from bs4 import BeautifulSoup
 
@@ -39,7 +39,7 @@ def disp_roster():
             process_table(infielders, result, "Infielders")
             process_table(outfielders, result, "Outfielders")
 
-            return f"<p>{result}</p>"
+            return jsonify(result)
         else:
             return "<h1>Site Not Found</h1>" # invalid path
     except Exception as e:
