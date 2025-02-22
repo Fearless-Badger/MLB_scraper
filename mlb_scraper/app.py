@@ -41,10 +41,10 @@ def disp_roster():
 
             return jsonify(result)
         else:
-            return "<h1>Site Not Found</h1>" # invalid path
+            return jsonify({"error" : "Site Not Found"}), 404 # invalid path
     except Exception as e:
         #    raise Exception(e) # lol
-        return f"<h1>Error accessing site : {e}</h1>"
+        return jsonify({"error": str(e)}), 500
     
 def process_table(table, res, position):
 
