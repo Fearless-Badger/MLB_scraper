@@ -1,6 +1,6 @@
 {
     "family": "my-ecs-taskdef",
-    "network": "awsvpc",
+    "networkMode": "awsvpc",
     "requiresCompatibilities": ["FARGATE"],
     "cpu": "256",
     "memory": "512",
