@@ -7,6 +7,9 @@ on:
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mlb_scraper
     
     steps:
       - name: Check out repository
@@ -21,7 +24,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest
+          
 
       - name: Run tests
         run:
