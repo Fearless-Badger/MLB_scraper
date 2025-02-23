@@ -55,8 +55,6 @@ jobs:
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2.3.0
         with:
-          task-definition: ecs-taskdef.json
+          task-definition: mlb_scraper/ecs-taskdef.json
           cluster: mlb-scraper-service
           service: mlb-scraper-service
-          container-name: mlb-scraper
-          image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/personal_proj/mlb_scraper:latest

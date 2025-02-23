@@ -7,7 +7,7 @@
     "containerDefinitions": [
         {
             "name": "mlb-scraper",
-            "image": "<IMAGE_PLACEHOLDER>",
+            "image": "676206932707.dkr.ecr.us-east-1.amazonaws.com/personal_proj/mlb_scraper",
             "essential": true,
             "portMappings": [
                 {
