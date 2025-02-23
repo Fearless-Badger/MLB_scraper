@@ -53,7 +53,7 @@ jobs:
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/personal_proj/mlb_scraper:latest
           
       - name: Deploy to ECS
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1.4.0
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1.2.0
         with:
           task-definition: ecs-taskdef.json
           cluster: mlb-scraper-service

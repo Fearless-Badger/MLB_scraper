@@ -6,7 +6,7 @@
     "memory": "512",
     "containerDefinitions": [
         {
-            "name": "mlb_scraper",
+            "name": "mlb-scraper",
             "image": "<IMAGE_PLACEHOLDER>",
             "essential": true,
             "portMappings": [
