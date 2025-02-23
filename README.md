@@ -13,11 +13,5 @@ Requirements:
 
 How to Run:
 
-    cd into "Roster_App"
-    run "pip install -r requirements.txt" terminal
-    cd into "backend"
-    run "python run.py"
-
-    ctrl + click link in terminal
-
-    ctrl + c to quit
+    # docker build -t mlb-scraper .
+    # docker run -p 5000:5000 mlb-scraper
