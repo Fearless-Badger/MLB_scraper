@@ -45,7 +45,7 @@ jobs:
       - name: Build docker image
         run: |
           docker build -t mlb_scraper .
-          docker tag mlb-scraper:latest ${{ secrets.AWS_ACCOUT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/personal_proj/mlb_scraper:latest
+          docker tag mlb-scraper:latest ${{ secrets.AWS_ACCONUT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/personal_proj/mlb_scraper:latest
 
       - name: Push docker image
         run: |
