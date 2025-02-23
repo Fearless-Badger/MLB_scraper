@@ -1,0 +1,20 @@
+{
+    "family": "my-ecs-taskdef",
+    "network": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "containerDefinitions": [
+        {
+            "name": "mlb_scraper",
+            "image": "<IMAGE_PLACEHOLDER>",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostport": 5000
+                }
+            ]
+        }
+    ]
+}
