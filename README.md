@@ -21,5 +21,3 @@ How to Run:
     ctrl + click link in terminal
 
     ctrl + c to quit
-
-    leftoff - 13:54 at https://www.youtube.com/watch?v=ApF5MHh3GUI&t=281s

@@ -5,11 +5,12 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-
+# home route
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
     return render_template("index.html")
 
+# json of players
 @app.route("/roster", methods = ['GET', 'POST'])
 def disp_roster():
 
