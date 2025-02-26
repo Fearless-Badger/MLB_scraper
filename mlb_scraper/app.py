@@ -1,15 +1,16 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 from bs4 import BeautifulSoup
 
 
 app = Flask(__name__)
 
-
+# home route
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
     return render_template("index.html")
 
+# json of players
 @app.route("/roster", methods = ['GET', 'POST'])
 def disp_roster():
 
@@ -39,12 +40,12 @@ def disp_roster():
             process_table(infielders, result, "Infielders")
             process_table(outfielders, result, "Outfielders")
 
-            return f"<p>{result}</p>"
+            return jsonify(result)
         else:
-            return "<h1>Site Not Found</h1>" # invalid path
+            return jsonify({"error" : "Site Not Found"}), 404 # invalid path
     except Exception as e:
         #    raise Exception(e) # lol
-        return f"<h1>Error accessing site : {e}</h1>"
+        return jsonify({"error": str(e)}), 500
     
 def process_table(table, res, position):
 
