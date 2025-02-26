@@ -4,7 +4,7 @@
     "requiresCompatibilities": ["FARGATE"],
     "cpu": "256",
     "memory": "512",
-    "executionRoleArn": "arn:aws:iam::676206932707:user/mlb_scraper_bot",
+    "executionRoleArn": "arn:aws:iam::676206932707:role/mlb_ecs_taskdef_json_role",
     "containerDefinitions": [
         {
             "name": "mlb-scraper",
