@@ -10,7 +10,26 @@
             <form action="{{ url_for('disp_roster') }}" method = "post" >
                 <label for = "team_name">Team name</label>
                 <select id = "team_name" name = "team_name">
+
+                    <optgroup label = "AL East">
+                        <option value = "orioles">Baltimore Orioles</option>
+                        <option value = "redsox">Boston Redsox</option>
+                        <option value = "yankees">New York Yankees</option>
+                        <option value = "rays">Tampa Bays Rays</option>
+                        <option value = "bluejays">Toronto Blue Jays</option>
+                    </optgroup>
+
+                    <optgroup label = "NL EAST">
+                        <option value = "braves">Atlanta Braves</option>
+                        <option value = "marlins">Miami Marlins</option>
+                        <option value = "mets">New York Mets</option>
+                        <option value = "phillies">Philadelphia Phillies</option>
+                        <option value = "nationals">Washington Nationals</option>
+                    </optgroup>
+
                     <option value = "cubs">Chicago Cubs</option>
+                    
+                    
                 </select>
                 <input type="submit" value="submit">
             </form>
