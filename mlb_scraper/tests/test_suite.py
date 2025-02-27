@@ -20,3 +20,9 @@ def test_roster_route_post(client):
     assert resp.is_json
     json_data = resp.get_json()
     assert "Pitchers" in json_data
+
+def test_roster_data(client):
+    resp = client.post("/roster", data = {"team_name" : "cubs"})
+    assert resp.is_json
+    data = resp.get_json()
+    assert "Catchers" in data

@@ -51,9 +51,8 @@ def process_table(table, res, position):
 
     res[position] = [] # create entry in dict
 
-    if table:
-        tbody = table.find('tbody').find_all('tr') # table -> tbody -> tr
-        if tbody:
-            for player in tbody:
-                found_player = player.find('td', 'info').find('a') # td -> info -> a 
-                res[position].append(found_player.string) # append name to list
+    
+    tbody = table.find('tbody').find_all('tr') # table -> tbody -> tr
+    for player in tbody:
+        found_player = player.find('td', 'info').find('a') # td -> info -> a 
+        res[position].append(found_player.string) # append name to list
