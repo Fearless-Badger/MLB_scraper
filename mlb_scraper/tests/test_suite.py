@@ -26,3 +26,13 @@ def test_roster_data(client):
     assert resp.is_json
     data = resp.get_json()
     assert "Catchers" in data
+
+def test_roster_division_1(client):
+    resp = client.post("/roster", data = {"team_name" : "redsox"})
+    assert resp.is_json
+    assert "Catchers" in resp.get_json()
+
+def test_roster_division_2(client):
+    resp = client.post("/roster" ,data = {"team_name" : "braves"})
+    assert resp.is_json
+    assert "Catchers" in resp.get_json()
