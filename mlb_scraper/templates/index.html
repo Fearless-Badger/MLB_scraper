@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="./../styles/index.css">
         <title>Home</title>
     </head>
     <body>
-        <div>
+        <div class = "center">
             <form action="{{ url_for('disp_roster') }}" method = "post" >
                 <label for = "team_name">Team name</label>
                 <select id = "team_name" name = "team_name">
