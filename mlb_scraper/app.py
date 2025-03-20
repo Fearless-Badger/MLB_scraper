@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, redirect, render_template, request, jsonify
 import requests
 from bs4 import BeautifulSoup
 
@@ -8,18 +8,24 @@ app = Flask(__name__)
 # home route
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
+    if request.method=="POST":
+        team_name = request.form.get("team_name")
+        if team_name:
+            return redirect(f"/roster/{team_name}")
+    return render_template("index.html")
+
+@app.route("/home", methods=['GET', 'POST'])
+def home():
     return render_template("index.html")
 
 # json of players
-@app.route("/roster", methods = ['GET', 'POST'])
-def disp_roster():
+@app.route("/roster/<team>")
+def disp_roster(team):
 
-    if request.method == "GET":
-        return render_template("index.html")
+    if not team:
+        return redirect("/")
 
-    team = None
     try:
-        team = request.form.get("team_name")
         url = f"https://www.mlb.com/{team}/roster/40-man"
         response = requests.get(url)
         if response.status_code == 200:

@@ -3,66 +3,72 @@
     <head>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
-        <link rel="stylesheet" href="./../styles/index.css">
+        <link href="../static/index.css" rel="stylesheet">
         <title>Home</title>
     </head>
     <body>
+
         <div class = "center">
-            <form action="{{ url_for('disp_roster') }}" method = "post" >
-                <label for = "team_name">Team name</label>
-                <select id = "team_name" name = "team_name">
 
-                    <optgroup label = "AL East">
-                        <option value = "orioles">Baltimore Orioles</option>
-                        <option value = "redsox">Boston Redsox</option>
-                        <option value = "yankees">New York Yankees</option>
-                        <option value = "rays">Tampa Bays Rays</option>
-                        <option value = "bluejays">Toronto Blue Jays</option>
-                    </optgroup>
-
-                    <optgroup label = "NL EAST">
-                        <option value = "braves">Atlanta Braves</option>
-                        <option value = "marlins">Miami Marlins</option>
-                        <option value = "mets">New York Mets</option>
-                        <option value = "phillies">Philadelphia Phillies</option>
-                        <option value = "nationals">Washington Nationals</option>
-                    </optgroup>
-
-                    <optgroup label = "AL Central">
-                        <option value = "whitesox">Chicago White Sox</option>
-                        <option value = "guardians">Cleveland Guardians</option>
-                        <option value = "tigers">Detroit Tigers</option>
-                        <option value = "royals">Kansas City Royals</option>
-                        <option value = "twins">Minnesota Twins</option>
-                    </optgroup>
-
-                    <optgroup label = "NL Central">
-                        <option value = "cubs">Chicago Cubs</option>
-                        <option value = "reds">Cincinnato Reds</option>
-                        <option value = "brewers">Milwaukee Brewers</option>
-                        <option value = "pirates">Pittsburgh Pirates</option>
-                        <option value = "cardinals">St. Louis Cardinals</option>
-                    </optgroup>
-
-                    <optgroup label= "AL West">
-                        <option value = "athletics">(OAKLAND!) Athletics</option>
-                        <option value = "astros">Houston Astros</option>
-                        <option value = "angels">Los Angeles Angels</option>
-                        <option value = "mariners">Seattle Mariners</option>
-                        <option value = "rangers">Texas Rangers</option>
-                    </optgroup>
-
-                    <optgroup label = "NL West">
-                        <option value = "dbacks">Arizone Diamondbacks</option>
-                        <option value = "rockies">Colorado Rockies</option>
-                        <option value = "dodgers">Los Angeles Dodgers</option>
-                        <option value = "padres">San Diego Padres</option>
-                        <option value = "giants">San Francisco Giants</option>
-                    </optgroup>
-                    
-                </select>
-                <input type="submit" value="submit">
-            </form>
+            <div>
+                <form action="/" method = "post" >
+                    <label for = "team_name">Team name</label>
+                    <select id = "team_name" name = "team_name">
+    
+                        <optgroup label = "AL East">
+                            <option value = "orioles">Baltimore Orioles</option>
+                            <option value = "redsox">Boston Redsox</option>
+                            <option value = "yankees">New York Yankees</option>
+                            <option value = "rays">Tampa Bays Rays</option>
+                            <option value = "bluejays">Toronto Blue Jays</option>
+                        </optgroup>
+    
+                        <optgroup label = "NL EAST">
+                            <option value = "braves">Atlanta Braves</option>
+                            <option value = "marlins">Miami Marlins</option>
+                            <option value = "mets">New York Mets</option>
+                            <option value = "phillies">Philadelphia Phillies</option>
+                            <option value = "nationals">Washington Nationals</option>
+                        </optgroup>
+    
+                        <optgroup label = "AL Central">
+                            <option value = "whitesox">Chicago White Sox</option>
+                            <option value = "guardians">Cleveland Guardians</option>
+                            <option value = "tigers">Detroit Tigers</option>
+                            <option value = "royals">Kansas City Royals</option>
+                            <option value = "twins">Minnesota Twins</option>
+                        </optgroup>
+    
+                        <optgroup label = "NL Central">
+                            <option value = "cubs">Chicago Cubs</option>
+                            <option value = "reds">Cincinnato Reds</option>
+                            <option value = "brewers">Milwaukee Brewers</option>
+                            <option value = "pirates">Pittsburgh Pirates</option>
+                            <option value = "cardinals">St. Louis Cardinals</option>
+                        </optgroup>
+    
+                        <optgroup label= "AL West">
+                            <option value = "athletics">(OAKLAND!) Athletics</option>
+                            <option value = "astros">Houston Astros</option>
+                            <option value = "angels">Los Angeles Angels</option>
+                            <option value = "mariners">Seattle Mariners</option>
+                            <option value = "rangers">Texas Rangers</option>
+                        </optgroup>
+    
+                        <optgroup label = "NL West">
+                            <option value = "dbacks">Arizone Diamondbacks</option>
+                            <option value = "rockies">Colorado Rockies</option>
+                            <option value = "dodgers">Los Angeles Dodgers</option>
+                            <option value = "padres">San Diego Padres</option>
+                            <option value = "giants">San Francisco Giants</option>
+                        </optgroup>
+                        
+                    </select>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+            
         </div>
+
     </body>
 </html>

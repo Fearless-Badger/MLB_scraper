@@ -12,27 +12,27 @@ def test_root_route(client):
     assert response.status_code == 200
 
 def test_roster_route_no_data(client):
-    resp = client.get("/roster")
+    resp = client.get("/roster/cubs")
     assert resp.status_code == 200
 
 def test_roster_route_post(client):
-    resp = client.post("/roster", data = {"team_name" : "yankees"})
+    resp = client.get("/roster/yankees")
     assert resp.is_json
     json_data = resp.get_json()
     assert "Pitchers" in json_data
 
 def test_roster_data(client):
-    resp = client.post("/roster", data = {"team_name" : "cubs"})
+    resp = client.get("/roster/cubs")
     assert resp.is_json
     data = resp.get_json()
     assert "Catchers" in data
 
 def test_roster_division_1(client):
-    resp = client.post("/roster", data = {"team_name" : "redsox"})
+    resp = client.get("/roster/redsox")
     assert resp.is_json
     assert "Catchers" in resp.get_json()
 
 def test_roster_division_2(client):
-    resp = client.post("/roster" ,data = {"team_name" : "braves"})
+    resp = client.get("/roster/braves")
     assert resp.is_json
     assert "Catchers" in resp.get_json()
