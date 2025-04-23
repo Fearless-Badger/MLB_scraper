@@ -1,6 +1,6 @@
 __pycache__/
 .pytest_cache/
 *.pyc
-ecs-taskdef.json
 tests/
 venv/
+run.py
