@@ -59,7 +59,7 @@ jobs:
       with:
         push: true
         tags: mlbrosterscraper.azurecr.io/mlb_app:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./mlb_scraper/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest

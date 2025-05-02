@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 RUN python -m venv /venv
-ENV PATH = "/venv/bin:$PATH"
+ENV PATH="/venv/bin:$PATH"
 RUN pip install --upgrade pip setuptools
 WORKDIR /mlb_scraper
 
