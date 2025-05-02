@@ -36,8 +36,10 @@ jobs:
 
   build:
     runs-on: 'ubuntu-latest'
-
     needs: test
+    defaults:
+      run:
+        working-directory: mlb_scraper
 
     steps:
     - uses: actions/checkout@v2
