@@ -29,3 +29,11 @@ jobs:
       - name: Run tests
         run:
           pytest
+
+      - name: Deploy to Azure
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: ${{ secrets.AZURE_APP_NAME }}
+          slot-name: production
+          publish-profile: ${{ secrets.AZURE_APP_PUBLISH_PROFILE}}
+          
