@@ -78,3 +78,6 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_cd8b68ed3d944d9a9e85d09233550b0a }}
         images: 'mlbrosterscraper.azurecr.io/mlb_app:${{ github.sha }}'
+
+    - name: Remove dangling Docker images
+      run: docker image prune -f
