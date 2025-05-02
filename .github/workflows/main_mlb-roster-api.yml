@@ -14,6 +14,10 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mlb_scraper
+      
     steps:
     - uses: actions/checkout@v2
 
@@ -33,6 +37,8 @@ jobs:
   build:
     runs-on: 'ubuntu-latest'
 
+    needs: test
+
     steps:
     - uses: actions/checkout@v2
 
@@ -50,7 +56,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mlbrosterscraper.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_9fbab93295b44ad9bcc2a0f6331643e2 }}/mlb_app:${{ github.sha }}
+        tags: mlbrosterscraper.azurecr.io/mlb_app:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -68,4 +74,4 @@ jobs:
         app-name: 'mlb-roster-api'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_cd8b68ed3d944d9a9e85d09233550b0a }}
-        images: 'mlbrosterscraper.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_9fbab93295b44ad9bcc2a0f6331643e2 }}/mlb_app:${{ github.sha }}'
+        images: 'mlbrosterscraper.azurecr.io/mlb_app:${{ github.sha }}'
