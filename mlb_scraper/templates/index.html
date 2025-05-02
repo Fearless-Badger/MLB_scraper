@@ -4,11 +4,23 @@
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
         <link href="../static/index.css" rel="stylesheet">
-        <title>Home</title>
+        <title>MLB Roster API</title>
     </head>
     <body>
 
+        <div class="header">
+            <h1>MLB Roster API</h1>
+        </div>
+
         <div class = "center">
+
+            <div class="info">
+                <p>
+                   To use the API, simply append a team name to the URL after the `/roster/` endpoint. 
+                   For example, accessing <a href="https://mlb-roster-api-fycqbwcxg8fwgdam.centralus-01.azurewebsites.net/roster/cubs" target="_blank">/roster/cubs</a> will return the roster for the Chicago Cubs. 
+                   The API will match the provided team name to an official MLB team and respond with a JSON object containing the team's roster and player details.
+                </p>
+            </div>
 
             <div>
                 <form action="/" method = "post" >
@@ -69,6 +81,17 @@
             </div>
             
         </div>
+
+        <div class="center">
+            <p>This site is running within a docker container, on an <a href="https://azure.microsoft.com/en-us/products/app-service/containers?activetab=pivot%3Adeploytab" target="_blank">Azure web app</a> instance.</p>
+            <p>
+                |
+            </p>
+            <p>To see details about the automated deployment of this app, visit my <a target="_blank" href="https://github.com/Fearless-Badger/MLB_scraper">GitHub!</a></p>
+        </div>
+
+
+        <div class="footer">This site scrapes the <a href="https://www.mlb.com/" target="_blank">Official MLB Website</a> <strong>|</strong> <a href="https://github.com/Fearless-Badger/MLB_scraper" target="_blank">GitHub</a></div>
 
     </body>
 </html>
