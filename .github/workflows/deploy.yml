@@ -31,9 +31,23 @@ jobs:
         run:
           pytest
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Setup Docker Builder
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and Push docker image
+        run:  docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.ACR_NAME }}.azurecr.io/myapp:${{ github.sha }} --push .
+
+      
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with: 
           app-name: ${{ secrets.AZURE_APP_NAME }}
-          slot-name: production
-          publish-profile: ${{ secrets.AZURE_APP_PUBLISH_PROFILE}}
+          images: '${{ secrets.ACR_NAME }}.azurecr.io/myapp:${{ github.sha }}'
+
+      - name: Remove dangling Docker images
+        run: docker image prune -f
