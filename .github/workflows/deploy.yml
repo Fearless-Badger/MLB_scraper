@@ -3,6 +3,7 @@ name: CI/CD for mlb_scraper
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   build-test-deploy:
@@ -36,4 +37,3 @@ jobs:
           app-name: ${{ secrets.AZURE_APP_NAME }}
           slot-name: production
           publish-profile: ${{ secrets.AZURE_APP_PUBLISH_PROFILE}}
-          
