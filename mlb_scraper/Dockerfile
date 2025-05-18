@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.13-slim
 RUN python -m venv /venv
 ENV PATH="/venv/bin:$PATH"
 RUN pip install --upgrade pip setuptools
