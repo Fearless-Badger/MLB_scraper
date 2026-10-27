@@ -2,8 +2,6 @@
 
 Query the API with ```/roster/<TEAM NAME>```, where ```<TEAM NAME>``` is the name of your favorite MLB team!
 
-View the deployed project [here!](https://mlb-roster-api-fycqbwcxg8fwgdam.centralus-01.azurewebsites.net/)
-
 The team name must match the format used by the MLB site in their URLs, which is typically a lowercase, simplified version of the official team name. For example:
 - The Chicago Cubs are `cubs`.
 - The Washington Nationals are `nationals`.
@@ -46,3 +44,7 @@ Finally, the container is deployed to the Azure Web App Instance.
 This step pulls the container image from the Azure Container Registry and configures the web app to use it as the application's source. After deployment, any dangling (old) Docker images are cleaned up to free up space and maintain a clean environment. The deployment pipeline then completes successfully.
 
 ![The deploy job completing](./documentation_pictures/deploy.png)
+
+### 10/27/2026 Status Update 
+
+This project has been removed from Microsoft Azure's services for cost saving purposes. 
